@@ -1,46 +1,51 @@
 
-import javax.swing.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 public class Main {
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Atividade");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(300, 200);
+        JFrame caixa = new JFrame("VENDA DE DOCES");
+        caixa.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        caixa.setSize(3000, 2000);
         
         JPanel panel = new JPanel();
-        frame.add(panel);
+        caixa.add(panel);
         
-        JTextField textField1 = new JTextField(20);
-        panel.add(textField1);
+        JLabel titulo = new JLabel("LOJA DE DOCES");
+        panel.add(titulo);
         
-        JTextField textField2 = new JTextField(20);
-        panel.add(textField2);
+        JLabel label = new JLabel("R$ 10,00");
+        panel.add(label);
         
-        JTextField textField3 = new JTextField(20);
-        panel.add(textField3);
-        
-        JLabel label1 = new JLabel("Digite seu nome, idade e telefone:");
-        panel.add(label1);
-        
-        JLabel label2 = new JLabel("");
+        JTextField textField = new JTextField(10);
+        panel.add(textField);
+   
+        JLabel label2 = new JLabel("R$ 15,00");
         panel.add(label2);
         
-        JLabel label3 = new JLabel("");
+        JTextField textField2= new JTextField(10);
+        panel.add(textField2);
+        
+        JLabel label3 = new JLabel("R$ 20,00");
         panel.add(label3);
         
+        JTextField textField3= new JTextField(10);
+        panel.add(textField3);
+       
         JButton button = new JButton("Clique Aqui");
         panel.add(button);
-        
-        button.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                String text1 = textField1.getText();
-                String text2 = textField2.getText();
-                String text3 = textField3.getText();
-                JOptionPane.showMessageDialog(null, "Você digitou: " + text1 + ", " + text2 + ", " + text3);
-            }
+     
+        button.addActionListener((var e) -> {
+            JOptionPane.showMessageDialog(null, "Total: R$ 45,00 ");
         });
         
-        frame.setVisible(true);
+        caixa.setVisible(true);
     }
 }
